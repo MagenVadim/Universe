@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'LANGUAGE', choices: ['all', 'C', 'Python', 'Bash'])
+    }
+    stages {
+        stage('Example') {
+            steps {
+
+                echo "Choice: ${params.CHOICE}"
+
+            }
+        }
+    }
+}
