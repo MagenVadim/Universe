@@ -4,10 +4,16 @@ pipeline {
         choice(name: 'LANGUAGE', choices: ['all', 'C', 'Python', 'Bash'])
     }
     stages {
-        stage('Example') {
-            steps {
-                echo "${LANGUAGE}, is priceeding..."
-            }
+        stage('Stage1') {
+            when { "${params.LANGUAGE}" == 'C' } 
+            steps { echo "Running language C" } 
         }
-    }
+        stage('Stage2') {
+            when { "${params.LANGUAGE}" == 'Python' } 
+            steps { echo "Running language Python" } 
+        }
+        stage('Stage3') {
+            when { "${params.LANGUAGE}" == 'Bash' } 
+            steps { echo "Running language Bash" } 
+        }
 }
