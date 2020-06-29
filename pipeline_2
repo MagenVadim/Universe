@@ -2,19 +2,19 @@ pipeline {
     agent any
     parameters {
         choice(
-            choices: ['greeting' , 'silence'],
+            choices: ['all' , 'C', 'Python', 'Bash'],
             description: '',
-            name: 'REQUESTED_ACTION')
+            name: 'LANGUAGE')
     }
 
     stages {
         stage ('Speak') {
             when {
                 // Only say hello if a "greeting" is requested
-                expression { params.REQUESTED_ACTION == 'greeting' }
+                expression { params.LANGUAGE == 'all' }
             }
             steps {
-                echo "Hello, bitwiseman!"
+                echo "Hello, ALL LANGUAGE!"
             }
         }
     }
