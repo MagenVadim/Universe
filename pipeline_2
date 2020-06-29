@@ -8,14 +8,21 @@ pipeline {
     }
 
     stages {
-        stage ('Speak') {
-            when {
-                // Only say hello if a "greeting" is requested
-                expression { params.LANGUAGE == 'all' }
-            }
-            steps {
-                echo "Hello, ALL LANGUAGE!"
-            }
+        stage ('ALL Language') {
+            when { expression { params.LANGUAGE == 'all' } }
+            steps { echo "Hello, ALL LANGUAGE!" }
+        }
+        stage ('C') {
+            when { expression { params.LANGUAGE == 'C' } }
+            steps { echo "Hello, LANGUAGE, CCCCC!" }
+        }
+        stage ('Python') {
+            when { expression { params.LANGUAGE == 'Python' } }
+            steps { echo "Hello, LANGUAGE, Python!" }
+        }
+        stage ('Bash') {
+            when { expression { params.LANGUAGE == 'Bash' } }
+            steps { echo "Hello, LANGUAGE, Bash!" }
         }
     }
 }
