@@ -3,7 +3,6 @@ pipeline {
     parameters {
         choice(name: 'LANGUAGE', choices: ['all', 'C', 'Python', 'Bash'])
     }
-    stages {
         stage('Stage1') {
             if("${params.LANGUAGE}" == 'C')
             steps { echo "Running language C" } 
@@ -15,6 +14,5 @@ pipeline {
         stage('Stage3') {
             if("${params.LANGUAGE}" == 'Bash') 
             steps { echo "Running language Bash" } 
-        }
 }
 }
