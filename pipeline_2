@@ -5,15 +5,15 @@ pipeline {
     }
     stages {
         stage('Stage1') {
-            when { "${params.LANGUAGE}" == 'C' } 
+            if("${params.LANGUAGE}" == 'C')
             steps { echo "Running language C" } 
         }
         stage('Stage2') {
-            when { "${params.LANGUAGE}" == 'Python' } 
+            if("${params.LANGUAGE}" == 'Python') 
             steps { echo "Running language Python" } 
         }
         stage('Stage3') {
-            when { "${params.LANGUAGE}" == 'Bash' } 
+            if("${params.LANGUAGE}" == 'Bash') 
             steps { echo "Running language Bash" } 
         }
 }
