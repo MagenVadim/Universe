@@ -1,0 +1,30 @@
+ def varC(){ echo "Hello, LANGUAGE,C!" }
+ 
+ pipeline {
+    agent any
+    parameters {
+        choice(
+            choices: ['all' , 'C', 'Python', 'Bash'],
+            description: '',
+            name: 'LANGUAGE')
+    }
+    
+    stages {
+        stage ('ALL Language') {
+            when { expression { params.LANGUAGE == 'all' } }
+            steps { echo "Hello, ALL LANGUAGE" }
+        }
+        stage ('C') {
+            when { expression { params.LANGUAGE == 'C' } }
+            steps { $varC() }
+        }
+        stage ('Python') {
+            when { expression { params.LANGUAGE == 'Python' } }
+            steps { echo "Hello, LANGUAGE, Python" }
+        }
+        stage ('Bash') {
+            when { expression { params.LANGUAGE == 'Bash' } }
+            steps { echo "Hello, LANGUAGE, Bash" }
+        }
+    }
+}
