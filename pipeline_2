@@ -10,9 +10,7 @@
     stages {
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            steps { ${varC} }
-            steps ${varPython}
-            steps ${varBash}
+            steps { echo "Hello, ALL LANGUAGE" }
         }
         stage ('C') {
             when { expression { params.LANGUAGE == 'C' } }
