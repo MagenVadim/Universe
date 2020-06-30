@@ -1,3 +1,5 @@
+ def varC = "C"
+ 
  pipeline {
     agent any
     parameters {
@@ -14,7 +16,7 @@
         }
         stage ('C') {
             when { expression { params.LANGUAGE == 'C' } }
-            steps { echo "Hello, LANGUAGE, CCCCC" }
+            steps { echo "Hello, LANGUAGE, ${varC}" }
         }
         stage ('Python') {
             when { expression { params.LANGUAGE == 'Python' } }
