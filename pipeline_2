@@ -1,15 +1,16 @@
-def varC = "echo "Hello, LANGUAGE, CCCCC""
-def varPython = "{ echo "Hello, LANGUAGE, Python" }"
-def varBash = "{ echo "Hello, LANGUAGE, Bash" }"
-        
-
-pipeline {
+ pipeline {
     agent any
     parameters {
         choice(
             choices: ['all' , 'C', 'Python', 'Bash'],
             description: '',
             name: 'LANGUAGE')
+    }
+    
+    environment {
+       varC = "echo "Hello, LANGUAGE, CCCCC""
+       varPython = "{ echo "Hello, LANGUAGE, Python" }"
+       varBash = "{ echo "Hello, LANGUAGE, Bash" }"
     }
 
     stages {
