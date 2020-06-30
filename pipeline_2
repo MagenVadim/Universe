@@ -1,4 +1,4 @@
-def varC = "{ echo "Hello, LANGUAGE, CCCCC!" }"
+def varC = "echo "Hello, LANGUAGE, CCCCC!""
 def varPython = "{ echo "Hello, LANGUAGE, Python!" }"
 def varBash = "{ echo "Hello, LANGUAGE, Bash!" }"
         
@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            steps ${varC}
+            steps { ${varC} }
             steps ${varPython}
             steps ${varBash}
         }
