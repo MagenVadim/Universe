@@ -1,3 +1,8 @@
+def varC = "steps { echo "Hello, LANGUAGE, CCCCC!" }"
+def varPython = "steps { echo "Hello, LANGUAGE, Python!" }"
+def varBash = "steps { echo "Hello, LANGUAGE, Bash!" }"
+        
+
 pipeline {
     agent any
     parameters {
@@ -10,19 +15,21 @@ pipeline {
     stages {
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            steps { echo "Hello, ALL LANGUAGE!" }
+            ${varC}
+            ${varPython}
+            ${varBash}
         }
         stage ('C') {
             when { expression { params.LANGUAGE == 'C' } }
-            steps { echo "Hello, LANGUAGE, CCCCC!" }
+            ${varC}
         }
         stage ('Python') {
             when { expression { params.LANGUAGE == 'Python' } }
-            steps { echo "Hello, LANGUAGE, Python!" }
+            ${varPython}
         }
         stage ('Bash') {
             when { expression { params.LANGUAGE == 'Bash' } }
-            steps { echo "Hello, LANGUAGE, Bash!" }
+            ${varBash}
         }
     }
 }
