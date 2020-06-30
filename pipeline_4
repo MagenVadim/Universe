@@ -16,7 +16,7 @@
         }
         stage ('C') {
             when { expression { params.LANGUAGE == 'C' } }
-            steps { $varC() }
+            steps $varC()
         }
         stage ('Python') {
             when { expression { params.LANGUAGE == 'Python' } }
