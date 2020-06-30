@@ -1,0 +1,14 @@
+// Define variable
+def myVariable = "foo"
+
+// Print variable
+pipeline {
+  agent any
+  stages {
+    stage ("Print variable") {
+      steps {
+        echo "My variable is ${myVariable}"
+      }
+    }
+  }
+}
