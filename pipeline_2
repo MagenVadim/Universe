@@ -1,6 +1,6 @@
-def varC = "echo "Hello, LANGUAGE, CCCCC!""
-def varPython = "{ echo "Hello, LANGUAGE, Python!" }"
-def varBash = "{ echo "Hello, LANGUAGE, Bash!" }"
+def varC = "echo "Hello, LANGUAGE, CCCCC""
+def varPython = "{ echo "Hello, LANGUAGE, Python" }"
+def varBash = "{ echo "Hello, LANGUAGE, Bash" }"
         
 
 pipeline {
