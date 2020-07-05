@@ -1,5 +1,5 @@
-def hi() {
-    println("Hello World!")
+def ALL() {
+    steps { echo "Hello, ALL LANGUAGE" }
 }
 
  pipeline {
@@ -26,7 +26,7 @@ def hi() {
         }
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            steps { hi }
+            ALL()
         }
         
     }
