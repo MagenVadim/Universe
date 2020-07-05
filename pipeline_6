@@ -1,4 +1,4 @@
-def ALL = "steps { echo "Hello, LANGUAGE, Bash" }"
+def ALL = "Hello, ALL, LANGUAGE"
 
  pipeline {
     agent any
