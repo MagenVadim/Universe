@@ -1,6 +1,4 @@
-def ALL() {
-    steps { echo "Hello, ALL LANGUAGE" }
-}
+def ALL = "Hello, ALL LANGUAGE"
 
  pipeline {
     agent any
@@ -26,7 +24,7 @@ def ALL() {
         }
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            ALL()
+            steps { echo ${ALL} }
         }
         
     }
