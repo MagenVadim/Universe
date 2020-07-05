@@ -26,7 +26,7 @@ var3 = '{ echo "Hello, LANGUAGE, Bash" }'
         }
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            steps echo "${var1}"
+            steps "${var1}"
         }
         
     }
