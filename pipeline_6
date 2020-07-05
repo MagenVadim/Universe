@@ -1,6 +1,6 @@
-var1 = '{ echo "Hello, LANGUAGE, CCC" }'
-var2 = '{ echo "Hello, LANGUAGE, Python" }'
-var3 = '{ echo "Hello, LANGUAGE, Bash" }'
+def hi() {
+    println("Hello World!")
+}
 
  pipeline {
     agent any
@@ -26,7 +26,7 @@ var3 = '{ echo "Hello, LANGUAGE, Bash" }'
         }
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            steps "${var1}"
+            steps { hi }
         }
         
     }
