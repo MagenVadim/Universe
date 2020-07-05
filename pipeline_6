@@ -24,7 +24,7 @@ def ALL = "steps { echo "Hello, LANGUAGE, Bash" }"
         }
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } }
-            echo "${ALL}"
+            steps { echo "${ALL}" }
         }
         
     }
