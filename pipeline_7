@@ -24,7 +24,7 @@
         
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } 
-                steps { stage('C').executed }
+                steps { echo "Hello, ALL LANGUAGE" }
         }
         
         
