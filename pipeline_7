@@ -9,8 +9,8 @@
     
    stages {                    
         stage ('C') {
-            when { expression { params.LANGUAGE == 'C' } }
-            steps { echo "Hello, LANGUAGE, ${varC}" }
+            when { expression { return params.LANGUAGE == 'C' } }
+            steps { echo "Hello, LANGUAGE" }
         }
         stage ('Python') {
             when { expression { params.LANGUAGE == 'Python' } }
