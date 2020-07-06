@@ -23,7 +23,7 @@
         }
         
         stage ('ALL Language') {
-            when { 
+            when { expression { params.LANGUAGE == 'all' } 
                 stages('C').executed
             }
         }
