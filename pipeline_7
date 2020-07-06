@@ -24,8 +24,7 @@
         
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } 
-                stages('C').executed
-            }
+                steps { stage('C').executed }
         }
         
         
