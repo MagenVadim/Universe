@@ -29,9 +29,7 @@
                    C:{
                       build job: 'full-build-C', parameters: [choice(name: 'LANGUAGE', value: C)]
                     }
-                   Python:{
-                      build job: 'full-build-Python', parameters: [choice(name: 'LANGUAGE', value: Python)]
-                    }
+                 
                    Bash:{
                       build job: 'full-build-Bash', parameters: [choice(name: 'LANGUAGE', value: Bash)]
                     } 
