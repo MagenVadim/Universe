@@ -10,18 +10,22 @@
     }
     
    stages {  
-        stage ('ALL Language') {
+       stage ('SCR') {
             steps { 
-                   script {
+                script {
                     skipRemainingStages = true
-                    println "skipRemainingStages = ${skipRemainingStages}"
                 }
-            }
+      }
+}
+   
+        stage ('ALL Language') {
+            when { expression { return params.LANGUAGE == 'all' || !skipRemainingStages} }
+            steps { echo "Hello, ALL LANGUAGE" }
         }
                   
         stage ('C') {
             when { expression { return params.LANGUAGE == 'C' } }
-            steps { echo "Hello, LANGUAGE" }
+            steps { echo "Hello, LANGUAGE, C" }
         }
         stage ('Python') {
             when { expression { params.LANGUAGE == 'Python' } }
