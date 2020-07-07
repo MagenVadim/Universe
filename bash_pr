@@ -1,0 +1,11 @@
+echo "Please enter your choise: "
+echo "1 - Display"
+echo "2 - Count"
+echo "3 - Search address book"
+echo "4 - Add entries"
+echo "5 - Remove entries"
+echo "6 - Edit entries"
+echo "7 - Sort"
+echo "8 - Clear"
+echo "9 - Save"
+read fc
