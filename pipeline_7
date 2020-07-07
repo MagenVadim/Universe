@@ -1,3 +1,5 @@
+ def skipRemainingStages = false
+ 
  pipeline {
     agent any
     parameters {
@@ -24,15 +26,11 @@
         
         stage ('ALL Language') {
             when { expression { params.LANGUAGE == 'all' } 
-                steps { 
-                parallel (
-                   C:{
-                      build job: 'full-build-C', parameters: [choice(name: 'LANGUAGE', value: C)]
-                    }
-                 
-                   Bash:{
-                      build job: 'full-build-Bash', parameters: [choice(name: 'LANGUAGE', value: Bash)]
-                    } 
+            steps { 
+                   script {
+                    skipRemainingStages = true
+                    println "skipRemainingStages = ${skipRemainingStages}"
                 }
+            }
         }
 }
