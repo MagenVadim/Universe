@@ -9,7 +9,16 @@
             name: 'LANGUAGE')
     }
     
-   stages {                    
+   stages {  
+        stage ('ALL Language') {
+            steps { 
+                   script {
+                    skipRemainingStages = true
+                    println "skipRemainingStages = ${skipRemainingStages}"
+                }
+            }
+        }
+                  
         stage ('C') {
             when { expression { return params.LANGUAGE == 'C' } }
             steps { echo "Hello, LANGUAGE" }
@@ -22,16 +31,6 @@
         stage ('Bash') {
             when { expression { params.LANGUAGE == 'Bash' } }
             steps { echo "Hello, LANGUAGE, Bash" }
-        }
-        
-        stage ('ALL Language') {
-            when { expression { params.LANGUAGE == 'all' } 
-            steps { 
-                   script {
-                    skipRemainingStages = true
-                    println "skipRemainingStages = ${skipRemainingStages}"
-                }
-            }
         }
     }
 }
