@@ -35,9 +35,9 @@
         stage ('Bash') {
             when { expression { params.LANGUAGE == 'Bash' } }
             steps { echo "Hello, LANGUAGE, Bash"
-            sh 'pwd'
-            sh 'cd ..'
-            sh 'pwd'
+            sh '''
+            ${WORKSPACE}/scripts/23_water.sh $USER
+            '''
  }
 
         }
