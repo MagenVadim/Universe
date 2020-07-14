@@ -30,7 +30,12 @@
  }}
 
 stage ('ALL Language') {
-            when { not  { params.LANGUAGE 'C'; 'Pyton'; 'Bash' } }
+            when { anyOf {
+                    expression { params.LANGUAGE == 'all' }
+                    expression { params.LANGUAGE != 'C' }
+                    expression { params.LANGUAGE != 'Python' }
+                    expression { params.LANGUAGE != 'Bash' }
+                } }
  steps { 
               echo "Hello, ALL LANGUAGE"
               sh '''
