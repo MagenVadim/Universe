@@ -30,7 +30,7 @@
  }}
 
 stage ('ALL Language') {
-            when { anyOf {
+            when { allOf {
                     expression { params.LANGUAGE == 'all' }
                     expression { params.LANGUAGE != 'C' }
                     expression { params.LANGUAGE != 'Python' }
