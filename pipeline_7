@@ -10,13 +10,7 @@
     }
     
    stages {  
-       stage ('SCR') {
-            steps { script {
-                    skipRemainingStages = true
-                }
-      }
-}
-           
+                 
         stage ('C') {
             when { expression { return params.LANGUAGE == 'C'} }
             steps { echo "Hello, LANGUAGE, C" }
