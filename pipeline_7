@@ -19,6 +19,9 @@
 }
    
         stage ('ALL Language') {
+        script {
+                    skipRemainingStages = false
+                }
             when { expression { return params.LANGUAGE == 'all' || !skipRemainingStages} }
             steps { echo "Hello, ALL LANGUAGE" }
         }
