@@ -17,7 +17,7 @@
         }
         
         stage ('Python') {
-            when { expression { return params.LANGUAGE == 'Pyton'} }
+            when { expression { return params.LANGUAGE == 'Python'} }
             steps { echo "Hello, LANGUAGE, Python" }
         }
         
