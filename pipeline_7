@@ -12,24 +12,24 @@
    stages {  
        stage ('SCR') {
             steps { 
-                script {
-                    skipRemainingStages = true
-                }
+                
       }
 }
    
         stage ('ALL Language') {
             when { expression { return params.LANGUAGE == 'all' || !skipRemainingStages} }
-            steps { echo "Hello, ALL LANGUAGE"
+            steps { script {
+                    skipRemainingStages = false
+                }
+              echo "Hello, ALL LANGUAGE"
             }
         }
                   
         stage ('C') {
-            when { expression { return params.LANGUAGE == 'C' || !skipRemainingStages} }
+            when { expression { return params.LANGUAGE == 'C' || skipRemainingStages} }
             steps { script {
                     skipRemainingStages = true
                 }
-                
                 echo "Hello, LANGUAGE, C" }
         }
         
