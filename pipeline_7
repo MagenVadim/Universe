@@ -19,11 +19,12 @@
 }
    
         stage ('ALL Language') {
-           script {
+            when { expression { return params.LANGUAGE == 'all' || !skipRemainingStages} }
+            steps { echo "Hello, ALL LANGUAGE"
+            script {
                     skipRemainingStages = false
                 }
-            when { expression { return params.LANGUAGE == 'all' || !skipRemainingStages} }
-            steps { echo "Hello, ALL LANGUAGE" }
+            }
         }
                   
         stage ('C') {
