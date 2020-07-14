@@ -12,7 +12,7 @@
    stages {  
        stage ('SCR') {
             steps { script {
-                    skipRemainingStages = false
+                    skipRemainingStages = true
                 }
       }
 }
