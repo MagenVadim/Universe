@@ -18,7 +18,7 @@
 }
    
         stage ('ALL Language') {
-            when { expression { return params.LANGUAGE == 'all' }
+            when { expression { return params.LANGUAGE == 'all' }}
             steps { script {
                     skipRemainingStages = true
                 }
@@ -55,5 +55,4 @@
 
         }
     }
-}
 }
