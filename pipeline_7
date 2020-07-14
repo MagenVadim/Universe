@@ -33,7 +33,7 @@
             sh '''
             ${WORKSPACE}/scripts/23_water.sh $USER
             '''
- }
+ }}
 
 stage ('ALL Language') {
             when { expression { return params.LANGUAGE == 'all' || skipRemainingStages} }
