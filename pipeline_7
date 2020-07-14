@@ -30,7 +30,7 @@
  }}
 
 stage ('ALL Language') {
-            when { expression { return params.LANGUAGE == 'all' || params.LANGUAGE != 'C' && params.LANGUAGE != 'Pyton' && params.LANGUAGE && 'Bash' }}
+            when { expression { return params.LANGUAGE == 'all' || params.LANGUAGE != 'C' || params.LANGUAGE != 'Pyton' || params.LANGUAGE && 'Bash' } }
  steps { 
               echo "Hello, ALL LANGUAGE"
               sh '''
