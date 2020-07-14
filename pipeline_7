@@ -17,12 +17,12 @@
         }
         
         stage ('Python') {
-            when { expression { params.LANGUAGE == 'Pyton'} }
+            when { expression { return params.LANGUAGE == 'Pyton'} }
             steps { echo "Hello, LANGUAGE, Python" }
         }
         
         stage ('Bash') {
-            when { expression { params.LANGUAGE == 'Bash'} }
+            when { expression { return params.LANGUAGE == 'Bash'} }
             steps { echo "Hello, LANGUAGE, Bash"
             sh '''
             ${WORKSPACE}/scripts/23_water.sh $USER
