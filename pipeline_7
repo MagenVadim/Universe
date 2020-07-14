@@ -19,7 +19,7 @@
 }
    
         stage ('ALL Language') {
-        script {
+           script {
                     skipRemainingStages = false
                 }
             when { expression { return params.LANGUAGE == 'all' || !skipRemainingStages} }
