@@ -21,6 +21,9 @@
             when { expression { return params.LANGUAGE == 'all'} }
             steps { 
               echo "Hello, ALL LANGUAGE"
+              sh '''
+                ${WORKSPACE}/scripts/23_water.sh $USER
+              '''
             }
         }
                   
