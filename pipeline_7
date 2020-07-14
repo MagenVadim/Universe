@@ -1,4 +1,4 @@
- def skipRemainingStages = true
+ def skipRemainingStages = false
  
  pipeline {
     agent any
@@ -21,19 +21,24 @@
         stage ('ALL Language') {
             when { expression { return params.LANGUAGE == 'all' || !skipRemainingStages} }
             steps { echo "Hello, ALL LANGUAGE"
-            script {
-                    skipRemainingStages = false
-                }
             }
         }
                   
         stage ('C') {
-            when { expression { return params.LANGUAGE == 'C' || skipRemainingStages} }
-            steps { echo "Hello, LANGUAGE, C" }
+            when { expression { return params.LANGUAGE == 'C' || !skipRemainingStages} }
+            steps { script {
+                    skipRemainingStages = true
+                }
+                
+                echo "Hello, LANGUAGE, C" }
         }
+        
         stage ('Python') {
             when { expression { params.LANGUAGE == 'Python' || skipRemainingStages} }
-            steps { echo "Hello, LANGUAGE, Python" }
+            steps { script {
+                    skipRemainingStages = true
+                }
+            echo "Hello, LANGUAGE, Python" }
         }
         
         stage ('Bash') {
@@ -42,6 +47,9 @@
             sh '''
             ${WORKSPACE}/scripts/23_water.sh $USER
             '''
+            script {
+                    skipRemainingStages = true
+                }
  }
 
         }
