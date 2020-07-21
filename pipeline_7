@@ -11,15 +11,21 @@
     
    stages {  
                  
-        stage ('C') {
+        stage ('BUILD') {
           steps{
            script {
             if (params.LANGUAGE == 'C'){
                echo "1 steps - Hello, LANGUAGE, C"
                 }
+            if (params.LANGUAGE == 'Python'){
+               echo "1 steps - Hello, LANGUAGE, Python"
+                }
+            if (params.LANGUAGE == 'Bash'){
+               echo "1 steps - Hello, LANGUAGE, Bash"
+                }
             else {
-             echo "1 steps - Hello, LANGUAGE, Python"
-        }
+               echo "1 steps - Hello, ALL LANGUAGE"
+               }
       }
     }
   }
