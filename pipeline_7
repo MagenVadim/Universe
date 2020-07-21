@@ -12,17 +12,22 @@
    stages {  
                  
         stage ('C') {
-            when { expression { return params.LANGUAGE == 'C'} }
-            steps { echo "1 steps - Hello, LANGUAGE, C" }
-            when { expression { return params.LANGUAGE == 'Python'} }
-            steps { echo "1 steps - Hello, LANGUAGE, Python" }
+          steps{
+           script {
+            if (return params.LANGUAGE == 'C'){
+               echo "1 steps - Hello, LANGUAGE, C"
+                }
+            else {
+             echo "1 steps - Hello, LANGUAGE, Python"
         }
-        
+      }
+    }
+  }
+      
         stage ('Python') {
             when { expression { return params.LANGUAGE == 'C'} }
             steps { echo "2 steps - Hello, LANGUAGE, C" }
-            when { expression { return params.LANGUAGE == 'Python'} }
-            steps { echo "2 steps - Hello, LANGUAGE, Python" }
+            
         }
         
         stage ('Bash') {
