@@ -18,7 +18,7 @@
                echo "1 steps - Hello, LANGUAGE, C!"
                 }
             if (params.LANGUAGE == 'Python'){
-               echo "1 steps - Hello, LANGUAGE, Python"
+               sh 'python3 ${WORKSPACE}/scripts/scr_p.pu'
                 }
             if (params.LANGUAGE == 'Bash'){
                echo "1 steps - Hello, LANGUAGE, Bash"
