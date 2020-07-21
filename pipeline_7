@@ -15,7 +15,7 @@
           steps{
            script {
             if (params.LANGUAGE == 'C'){
-               echo "1 steps - Hello, LANGUAGE, C"
+               echo "1 steps - Hello, LANGUAGE, C!"
                 }
             if (params.LANGUAGE == 'Python'){
                echo "1 steps - Hello, LANGUAGE, Python"
