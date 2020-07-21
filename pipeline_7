@@ -46,6 +46,7 @@
                }
             
         }
+    }
         
         stage ('Bash') {
             when { expression { return params.LANGUAGE == 'Bash'} }
