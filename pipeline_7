@@ -23,7 +23,7 @@
             if (params.LANGUAGE == 'Bash'){
                echo "1 steps - Hello, LANGUAGE, Bash"
                 }
-            else {
+            if (params.LANGUAGE == 'all') {
                echo "1 steps - Hello, ALL LANGUAGE"
                }
       }
@@ -31,8 +31,19 @@
   }
       
         stage ('Python') {
-            when { expression { return params.LANGUAGE == 'C'} }
-            steps { echo "2 steps - Hello, LANGUAGE, C" }
+            script {
+            if (params.LANGUAGE == 'C'){
+               echo "22 steps - Hello, LANGUAGE, C"
+                }
+            if (params.LANGUAGE == 'Python'){
+               echo "22 steps - Hello, LANGUAGE, Python"
+                }
+            if (params.LANGUAGE == 'Bash'){
+               echo "22 steps - Hello, LANGUAGE, Bash"
+                }
+            if (params.LANGUAGE == 'all') {
+               echo "22 steps - Hello, ALL LANGUAGE"
+               }
             
         }
         
