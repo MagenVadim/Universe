@@ -14,7 +14,7 @@
         stage ('C') {
           steps{
            script {
-            if (return params.LANGUAGE == 'C'){
+            if (params.LANGUAGE == 'C'){
                echo "1 steps - Hello, LANGUAGE, C"
                 }
             else {
