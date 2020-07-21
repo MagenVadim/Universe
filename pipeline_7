@@ -11,7 +11,7 @@
     
    stages {  
                  
-        stage ('BUILD') {
+        stage ('C') {
           steps{
            script {
             if (params.LANGUAGE == 'C'){
