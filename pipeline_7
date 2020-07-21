@@ -31,20 +31,21 @@
   }
       
         stage ('Python') {
+          steps{
             script {
-            if (params.LANGUAGE == 'C'){
+             if (params.LANGUAGE == 'C'){
                echo "22 steps - Hello, LANGUAGE, C"
                 }
-            if (params.LANGUAGE == 'Python'){
+             if (params.LANGUAGE == 'Python'){
                echo "22 steps - Hello, LANGUAGE, Python"
                 }
-            if (params.LANGUAGE == 'Bash'){
+             if (params.LANGUAGE == 'Bash'){
                echo "22 steps - Hello, LANGUAGE, Bash"
                 }
-            if (params.LANGUAGE == 'all') {
+             if (params.LANGUAGE == 'all') {
                echo "22 steps - Hello, ALL LANGUAGE"
                }
-            
+            }
         }
     }
         
