@@ -16,6 +16,7 @@
            script {
             if (params.LANGUAGE == 'C'){
                echo "1 steps - Hello, LANGUAGE, C!"
+               sh '~/RT/Ci/a.out'
                 }
             if (params.LANGUAGE == 'Python'){
                sh 'python3 ${WORKSPACE}/scripts/scr_p.pu'
