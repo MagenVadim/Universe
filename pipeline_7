@@ -24,8 +24,12 @@
                 }
             if (params.LANGUAGE == 'Bash'){
                echo "running scripts in Bash language"
-               sh '${WORKSPACE}/scripts/amount.sh'
-               echo "parameters is ..."
+               sh '''
+               ${WORKSPACE}/scripts/amount.sh
+               TEST=`${WORKSPACE}/scripts/amount.sh`
+               $TEST > result
+               '''
+               echo 'parameters is $TEST'
                 }
             if (params.LANGUAGE == 'all') {
                echo "running scripts in all language: C, Python, Bash language"
