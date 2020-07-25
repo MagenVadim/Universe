@@ -15,17 +15,22 @@
           steps{
            script {
             if (params.LANGUAGE == 'C'){
-               echo "1 steps - Hello, LANGUAGE, C!"
+               echo "running scripts in C lanuage!"
                sh '${WORKSPACE}/scripts/a.out'
                 }
             if (params.LANGUAGE == 'Python'){
+               echo "running scripts in Python lanuage!"
                sh 'python3 ${WORKSPACE}/scripts/scr_p.pu'
                 }
             if (params.LANGUAGE == 'Bash'){
-               echo "1 steps - Hello, LANGUAGE, Bash"
+               echo "running scripts in Bash language"
+               sh '${WORKSPACE}/scripts/amount.sh'
                 }
             if (params.LANGUAGE == 'all') {
-               echo "1 steps - Hello, ALL LANGUAGE"
+               echo "running scripts in all language: C, Python, Bash language"
+               sh '${WORKSPACE}/scripts/a.out'
+               sh 'python3 ${WORKSPACE}/scripts/scr_p.pu'
+               sh '${WORKSPACE}/scripts/amount.sh'
                }
       }
     }
