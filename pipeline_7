@@ -27,7 +27,9 @@
                sh '''
                ${WORKSPACE}/scripts/amount.sh
                TEST=`${WORKSPACE}/scripts/amount.sh`
-               $TEST > result
+               cd ${HOME}/RT/Jenkins/
+               touch result.txt
+               $TEST > result.txt
                '''
                echo 'parameters is $TEST'
                 }
