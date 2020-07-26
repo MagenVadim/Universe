@@ -28,8 +28,8 @@
                ${WORKSPACE}/scripts/amount.sh
                TEST=`${WORKSPACE}/scripts/amount.sh`
                cd ${WORKSPACE}/scripts
-               touch /${WORKSPACE}/scripts/results.txt
-               chmod 777 /${WORKSPACE}/scripts/results.txt
+               touch ${WORKSPACE}/scripts/results.txt
+               chmod 777 ${WORKSPACE}/scripts/results.txt
                echo "$TEST" > ${WORKSPACE}/scripts/results.txt
                '''
                echo 'parameters is $TEST'
