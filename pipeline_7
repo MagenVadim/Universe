@@ -62,29 +62,17 @@
     }
         
         stage ('Bash') {
-            when { expression { return params.LANGUAGE == 'Bash'} }
+            when { expression
+              {
+            return params.LANGUAGE == 'Bash'
+              }
+                 }
             steps { echo "Hello, LANGUAGE, Bash"
             sh '''
             ${WORKSPACE}/scripts/23_water.sh $USER
             '''
- }}
-
-stage ('ALL Language') {
-            when { allOf {
-                    expression { params.LANGUAGE != 'all' }
-                    expression { params.LANGUAGE != 'C' }
-                    expression { params.LANGUAGE != 'Python' }
-                    expression { params.LANGUAGE != 'Bash' }
-                } }
- steps { 
-              echo "Hello, ALL LANGUAGE"
-              sh '''
-                ${WORKSPACE}/scripts/23_water.sh $USER
-              '''
-            }
-        }
-
-
+                  }
+                        }
 
         }
     }
