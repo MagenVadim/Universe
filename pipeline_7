@@ -11,7 +11,7 @@
     
    stages {  
                  
-        stage ('C') {
+        stage ('Build') {
           steps{
            script {
             if (params.LANGUAGE == 'C'){
@@ -42,7 +42,7 @@
     }
   }
       
-        stage ('Python') {
+        stage ('Test') {
           steps{
             script {
                  if (params.LANGUAGE == 'C'){
@@ -61,7 +61,7 @@
         }
     }
         
-        stage ('Bash') {
+        stage ('Deploy') {
             when { expression
               {
             return params.LANGUAGE == 'Bash'
