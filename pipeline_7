@@ -16,7 +16,8 @@
            script {
             if (params.LANGUAGE == 'C'){
                echo "running scripts in C lanuage!"
-               sh '${WORKSPACE}/scripts/a.out'
+               sh "TEST=`${WORKSPACE}/scripts/a.out`"
+               echo "$TEST"
                 }
             if (params.LANGUAGE == 'Python'){
                echo "running scripts in Python lanuage!"
