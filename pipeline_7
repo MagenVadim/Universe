@@ -27,9 +27,10 @@
                sh '''
                ${WORKSPACE}/scripts/amount.sh
                TEST=`${WORKSPACE}/scripts/amount.sh`
-               cd /home/vadim/RT/Jenkins/
-               touch /home/vadim/RT/Jenkins/result.txt
-               $TEST > /home/vadim/RT/Jenkins/result.txt
+               cd ${WORKSPACE}/scripts
+               touch /${WORKSPACE}/scripts/results.txt
+               chmod 777 /${WORKSPACE}/scripts/results.txt
+               echo "$TEST" > ${WORKSPACE}/scripts/results.txt
                '''
                echo 'parameters is $TEST'
                 }
