@@ -53,7 +53,7 @@
             script {
                  if (params.LANGUAGE == 'C'){
                  sh '''
-                     if [[ $TEST > 10 ]]; then
+                     if [ $TEST > 10 ]; then
                      echo "well"
                      fi
                   '''
