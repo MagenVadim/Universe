@@ -58,17 +58,6 @@
                      echo "very bad"
                      fi
                   '''
-               echo "22 steps - Hello, LANGUAGE, C"
-                }
-             if (params.LANGUAGE == 'Python'){
-               echo "22 steps - Hello, LANGUAGE, Python"
-                }
-             if (params.LANGUAGE == 'Bash'){
-               echo "22 steps - Hello, LANGUAGE, Bash"
-                }
-             if (params.LANGUAGE == 'all') {
-               echo "22 steps - Hello, ALL LANGUAGE"
-               }
             }
         }
     }
