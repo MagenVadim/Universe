@@ -30,10 +30,9 @@
                echo "running scripts in Bash language"
                sh '''
                ${WORKSPACE}/scripts/amount.sh
-               TEST=`${WORKSPACE}/scripts/amount.sh`
-               cd ${WORKSPACE}/scripts
+               TEST=`/var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/amount.sh`
+               echo 'number of files in direcory is ' $TEST
                '''
-               echo 'parameters is ' $TEST
                 }
             if (params.LANGUAGE == 'all') {
                echo "running scripts in all language: C, Python, Bash language"
