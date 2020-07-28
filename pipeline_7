@@ -18,9 +18,8 @@
                echo "running scripts in C lanuage!"
                sh '''
                  ${WORKSPACE}/scripts/a.out"
-                 TEST=`${WORKSPACE}/scripts/a.out`
-                 '''
-                 echo "Number of files in directory is: $TEST"
+                 TEST=`/var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/a.out`
+                 '''             
                 }
             if (params.LANGUAGE == 'Python'){
                echo "running scripts in Python lanuage!"
