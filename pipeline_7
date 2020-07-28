@@ -18,7 +18,7 @@
                echo "running scripts in C lanuage!"
                sh '''
                  ${WORKSPACE}/scripts/a.out"
-                 TEST=`${WORKSPACE}/scripts/amount.sh`
+                 TEST=`${WORKSPACE}/scripts/a.out`
                  '''
                  echo "Number of files in directory is: $TEST"
                 }
