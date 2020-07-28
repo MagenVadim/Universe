@@ -54,9 +54,9 @@
                  sh '''
                      if [ $TEST > 30 ]; then
                      echo "work is well done. Number of files is "
-                     else
-                     echo "Number of files isn`t enough. Number of files is  " 
-                     fi
+                       else
+                     echo "Number of files is not enough." 
+                       fi
                   '''
             }
         }
