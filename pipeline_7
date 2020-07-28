@@ -19,6 +19,7 @@
                sh '''
                  ${WORKSPACE}/scripts/a.out
                  TEST=`/var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/a.out`
+                 echo "number of files in direcory is $TEST "
                  '''             
                 }
             if (params.LANGUAGE == 'Python'){
