@@ -51,10 +51,9 @@
           steps{
             script {
                  if (params.LANGUAGE == 'C'){
-                 sh 'results = ${WORKSPACE}/scripts/results'
                  sh '''
                      if [ $TEST > 30 ]; then
-                     echo "work is well done. Number of files is " $TEST > ${results}
+                     echo "work is well done. Number of files is " $TEST > ${WORKSPACE}/scripts/results
                      else
                      echo "very bad"
                      fi
