@@ -53,8 +53,10 @@
             script {
                  if (params.LANGUAGE == 'C'){
                  sh '''
-                     if [ '$TEST' > 10 ]; then
+                     if [ '$TEST' > 20 ]; then
                      echo "well"
+                     else
+                     echo "very bad"
                      fi
                   '''
                echo "22 steps - Hello, LANGUAGE, C"
