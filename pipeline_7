@@ -48,9 +48,7 @@
   }
       
         stage ('Test') {
-          steps{
-              script {
-                 when
+          when
                  { allOf
                     {
                  expression { params.LANGUAGE == 'all' }
@@ -59,7 +57,9 @@
                  expression { params.LANGUAGE == 'Bash' }
                     }
                  }
-                      {
+                    
+          steps{
+              script {                
                  sh '''
                      ${WORKSPACE}/scripts/a.out
                      TEST=`/var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/a.out`
