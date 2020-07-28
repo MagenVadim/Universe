@@ -51,7 +51,7 @@
           steps{
             script {
                  if (params.LANGUAGE == 'C'){
-                 sh '''
+                 sh """
                      ${WORKSPACE}/scripts/a.out
                      TEST=`/var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/a.out`
                      if [ $TEST > 30 ]; then
@@ -59,7 +59,7 @@
                        else
                      $TEST > ${WORKSPACE}/scripts/results
                        fi
-                  '''
+                  """
             }
         }
      }
