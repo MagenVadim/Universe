@@ -53,10 +53,10 @@
                  when
                  { allOf
                     {
-                 expression { params.LANGUAGE != 'all' }
-                 expression { params.LANGUAGE != 'C' }
-                 expression { params.LANGUAGE != 'Python' }
-                 expression { params.LANGUAGE != 'Bash' }
+                 expression { params.LANGUAGE == 'all' }
+                 expression { params.LANGUAGE == 'C' }
+                 expression { params.LANGUAGE == 'Python' }
+                 expression { params.LANGUAGE == 'Bash' }
                     }
                  }
                       {
