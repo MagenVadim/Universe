@@ -57,7 +57,7 @@
                      if [[ "$TEST" -gt 30 ]]; then
                      echo "work is well done. Number of files is "
                        else
-                     $TEST > ${WORKSPACE}/scripts/results
+                     echo "no enoufh.... "
                        fi
                   '''
             }
