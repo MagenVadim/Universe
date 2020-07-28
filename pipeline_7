@@ -52,6 +52,11 @@
           steps{
             script {
                  if (params.LANGUAGE == 'C'){
+                 sh '''
+                     if [[ $TEST > 10 ]]; then
+                     echo "well"
+                     fi
+                  '''
                echo "22 steps - Hello, LANGUAGE, C"
                 }
              if (params.LANGUAGE == 'Python'){
