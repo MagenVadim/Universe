@@ -26,7 +26,7 @@
                echo "running scripts in Python lanuage!"
                sh '''
                 python3 ${WORKSPACE}/scripts/scr_p.pu
-                TEST=`python3 /var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/a.out`
+                TEST=`python3 /var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/scr_p.pu`
                  echo 'number of files in direcory is ' $TEST
                 '''
                 }
