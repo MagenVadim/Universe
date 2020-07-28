@@ -53,9 +53,9 @@
                  if (params.LANGUAGE == 'C'){
                  sh '''
                      if [ $TEST > 30 ]; then
-                     echo "work is well done. Number of files is " $TEST > ${WORKSPACE}/scripts/results
+                     echo "work is well done. Number of files is " $TEST 
                      else
-                     echo "Number of files isn`t enough. Number of files is  " $TEST > ${WORKSPACE}/scripts/results
+                     echo "Number of files isn`t enough. Number of files is  " $TEST 
                      fi
                   '''
             }
