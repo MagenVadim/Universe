@@ -1,4 +1,8 @@
- def skipRemainingStages = true
+ def lang_C = sh '''
+                 ${WORKSPACE}/scripts/a.out
+                 TEST=`/var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/a.out`
+                 echo 'number of files in direcory is ' $TEST
+                 '''         
  
  pipeline {
     agent any
@@ -16,11 +20,7 @@
            script {
             if (params.LANGUAGE == 'C'){
                echo "running scripts in C lanuage!"
-               sh '''
-                 ${WORKSPACE}/scripts/a.out
-                 TEST=`/var/lib/jenkins/workspace/PIPELINE_PROJECT/scripts/a.out`
-                 echo 'number of files in direcory is ' $TEST
-                 '''             
+               ${lang_C}
                 }
             if (params.LANGUAGE == 'Python'){
                echo "running scripts in Python lanuage!"
