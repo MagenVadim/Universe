@@ -53,7 +53,7 @@
             script {
                  if (params.LANGUAGE == 'C'){
                  sh '''
-                     if [ '$TEST' > 20 ]; then
+                     if [ '$TEST' > 30 ]; then
                      echo "well"
                      else
                      echo "very bad"
