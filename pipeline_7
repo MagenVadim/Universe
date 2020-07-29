@@ -48,7 +48,7 @@
   }
       
         stage ('Test') {
-          when { allOf {
+          when { anyOf {
                  expression { params.LANGUAGE == 'all' }
                  expression { params.LANGUAGE == 'C' }
                  expression { params.LANGUAGE == 'Python' }
