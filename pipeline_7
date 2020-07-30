@@ -73,15 +73,15 @@
   
         
         stage ('Deploy') {
-            when { expression
-              {
-            return params.LANGUAGE == 'Bash'
-              }
+            when { anyOf {
+                 expression { params.LANGUAGE == 'all' }
+                 expression { params.LANGUAGE == 'C' }
+                 expression { params.LANGUAGE == 'Python' }
+                 expression { params.LANGUAGE == 'Bash' }
                  }
-            steps { echo "Hello, LANGUAGE, Bash"
-            sh '''
-            ${WORKSPACE}/scripts/23_water.sh $USER
-            '''
+               }
+            steps {
+                 echo ${WORKSPACE}/scripts/results
                   }
                         }
 
