@@ -81,7 +81,7 @@
                  }
                }
             steps {
-                 echo ${WORKSPACE}/scripts/results
+                 sh '${WORKSPACE}/scripts/results'
                   }
                         }
 
