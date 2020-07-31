@@ -81,7 +81,9 @@
                  }
                }
             steps {
-                 echo "work is well done."
+                 always {
+        emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+    }
                    }
                            }
                         
